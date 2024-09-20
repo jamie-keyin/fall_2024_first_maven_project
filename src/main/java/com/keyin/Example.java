@@ -6,7 +6,7 @@ import java.util.Date;
 public class Example {
 
     public Date getTodaysDate() {
-        return new Date();
+        return null;
     }
 
     public int getCurrentMonth() {
