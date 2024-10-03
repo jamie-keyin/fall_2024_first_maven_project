@@ -13,7 +13,7 @@ import java.util.Date;
 @ExtendWith(MockitoExtension.class)
 public class ExampleTest {
     @Mock
-    private DataSource dataSourceMock;
+    private DataSource dataSourceMock = new DataSource();
 
 
     @Test
@@ -34,9 +34,9 @@ public class ExampleTest {
     public void testDataSourceName() {
         Example exampleUnderTest = new Example();
 
-        Mockito.when(dataSourceMock.getDataSourceName()).thenReturn("TestDataSource");
-
         exampleUnderTest.setDataSource(dataSourceMock);
+
+        Mockito.when(dataSourceMock.getDataSourceName()).thenReturn("TestDataSource");
 
         Assertions.assertEquals("TestDataSource", exampleUnderTest.getDataSourceName());
     }
